@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="mb-4">Employee Management System</h2>
+
+<a href="/add" class="btn btn-primary mb-3">
+    Add Employee
+</a>
+
+<table class="table table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+    {% for employee in employees %}
+
+    <tr>
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.department }}</td>
+        <td>{{ employee.salary }}</td>
+
+        <td>
+            <a href="/edit/{{ employee.id }}" class="btn btn-warning btn-sm">
+                Edit
+            </a>
+
+            <a href="/delete/{{ employee.id }}" class="btn btn-danger btn-sm">
+                Delete
+            </a>
+        </td>
+
+    </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}
