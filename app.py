@@ -22,8 +22,8 @@ class User(UserMixin):
 
 
 users = {
-    "admin": {
-        "password": "admin123"
+    "surekha": {
+        "password": "surekha123"
     }
 }
 
